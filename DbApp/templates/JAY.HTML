@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+  <title>Hello Admin</title> 
+  <script src="http://maps.google.com/maps/api/js?sensor=false" 
+          type="text/javascript"></script>
+          <style>
+              #jay{
+                  margin:5px solid black;
+                  padding-left: 30%;
+                  padding-top: 0%;
+              }
+              #jay1{
+                background-color: green;
+              }
+              #jay2{
+                background-color: green;
+                padding-bottom: 150px;
+              }
+          </style>
+</head> 
+<body >
+    <div id="jay1"><h1>HELLO CLEANER</h1>
+    <p>the status of dustbin around u are</p>
+    </div>
+    <div id="jay">
+  <div id="map" style="width: 500px; height: 400px;"></div>
+
+  <script type="text/javascript">
+    var locations = [
+    ['vivekanada statue,40',16.565157, 81.522238, 1],
+    ['vishnu dental collage,10',16.5688351, 81.5210601, 2],
+    ['swec girls hostels,30',16.569312,81.523117, 3],
+    ['Seetha poly technique,78',16.567299, 81.525065, 4],
+      ['swec collage,45',16.568546, 81.522078, 5]
+    ];
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 15,
+      center:  {lat: 16.568546, lng:  81.522078},
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) { 
+     if(i%2==0)
+     {
+        marker = new google.maps.Marker({
+        icon: new google.maps.MarkerImage("http://maps.google.com/mapfiles/ms/icons/green-dot.png"),
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+            });
+     }  
+
+       else if(i==3)
+  {
+    marker = new google.maps.Marker({
+        icon: new google.maps.MarkerImage("http://maps.google.com/mapfiles/ms/icons/red-dot.png"),
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+            }); 
+  }
+  else if(i%2==1)
+  {
+    marker = new google.maps.Marker({
+        icon: new google.maps.MarkerImage("http://maps.google.com/mapfiles/ms/icons/yellow-dot.png"),
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+            }); 
+  }
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+  </script></div>
+  <div id="jay2">
+       <ul>
+           <li>red color indicates it is filled</li>
+           <li>Yellow color indicates it is ready to fill</li>
+           <li>green color indicates it is good in condition</li>
+       </ul>
+  </div>
+</body>
+</html>

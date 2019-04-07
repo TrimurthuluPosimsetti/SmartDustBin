@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+{% load static %}
+<html>
+	<head >
+		<title>ECO DUSTBINS</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+	   <style>
+	     .innersplit{
+			   background-color:green;
+		 }  
+	   </style>
+
+
+	</head>
+	<body>
+
+		
+			<section id="banner" >
+				<div class="inner split" >
+					<section>
+						<h2>ECO DUSTBINS</h2>
+					</section>
+					<section>
+						<p>Get a clen and green society</p>
+						<ul class="actions">
+							<li><a href="http://localhost:8000/about" class="button special">To Know More</a></li>
+						</ul>
+					</section>
+				</div>
+			</section>
+  
+
+		
+	
+			<section id="two" class="wrapper style2 alt">
+				<div class="inner">
+					<div class="spotlight">
+						<div class="image">
+							<img src="{% static 'images/db.png' %}" alt="" />
+						</div>
+						<div class="content">
+							<h3>User Login</h3>
+							<p>To see your account details</p>
+							<ul class="actions">
+								<li><a href="http://localhost:8000/userlogin/l/" class="button alt">Click Here</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="spotlight">
+						<div class="image">
+							<img src="{% static 'images/ad.jpeg' %}" alt="" />
+						</div>
+						<div class="content">
+							<h3>Admin Login</h3>
+							<p>To manage the dustbins make cleaner cities</p>
+							<ul class="actions">
+								<li><a href="http://localhost:8000/adminlogin/al/" class="button alt">Click Here</a></li>
+							</ul>
+						</div>
+					</div>
+				
+					<ul class="actions special">
+						<li><a href="http://localhost:8000/usersignup/s/" class="button alt">Signup As User</a></li>
+					</ul>
+				</div>
+					</div>
+				
+					<ul class="actions special">
+						<li><a href="http://localhost:8000/adminsign/as/" class="button alt">Signup As Admin</a></li>
+					</ul> 
+				</div>
+			</section>
+
+		<!-- Contact -->
+			<section id="contact" class="wrapper">
+				<div class="inner split">
+					<section>
+						<h2>REPORT</h2>
+						<p>In case of any trouble</p>
+						<form action="" class="alt" method="POST">
+								{% csrf_token %}
+							<div class="row uniform">
+								<div class="6u 12u$(xsmall)">
+									<input name="Name" placeholder="Name" type="text">
+								</div>
+								<div class="6u$ 12u$(xsmall)">
+									<input name="Email" placeholder="Email" type="email">
+								</div>
+								<div class="12u$">
+									<textarea name="Message" placeholder="Message" rows="4"></textarea>
+ 								</div>
+ 							</div>
+ 							<ul class="actions">
+ 								<li><input class="alt" value="Send message" type="submit"></li>
+ 							</ul>
+ 						</form>
+					</section>
+					<section>
+						<ul class="contact">
+							<li class="fa-twitter"><a href="https://twitter.com">twitter.com/green house-tld</a></li>
+							<li class="fa-facebook"><a href="https://facebook.com">facebook.com/greenbin-tld</a></li>
+							<li class="fa-instagram"><a href="https://instagram.com">instagram.com/ecobin-tld</a></li>
+							<li class="fa-envelope"><a href="https://mygreenbin.in/">Greenbin@untitled.tld</a></li>
+							<li class="fa-home">banjarahill, Hydrebad<br/>Andhra, 00000-0000</li>
+						</ul>
+					</section>
+				</div>
+			</section>
+
+<!-- Scripts -->
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/skel.min.js' %}"></script>
+<script src="{% static 'js/util.js' %}"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="{% static 'js/util.js' %}"></script>
+
+	</body>
+</html>
